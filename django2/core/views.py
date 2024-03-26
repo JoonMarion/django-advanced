@@ -10,7 +10,7 @@ def index(request):
 def contato(request):
     form = ContatoForm(request.POST or None)
     if str(request.method) == 'POST':
-        if form .is_valid():
+        if form.is_valid():
             form.send_mail()
             messages.success(request, 'E-mail enviado com sucesso!')
             form = ContatoForm()
@@ -25,13 +25,9 @@ def produto(request):
     if str(request.method) == 'POST':
         form = ProdutoModelForm(request.POST, request.FILES)
         if form.is_valid():
-            prod = form.save(commit=False)
-            print('nome: ', prod.nome)
-            print('preço: ', prod.preco)
-            print('estoque: ', prod.estoque)
-            print('imagem: ', prod.imagem)
-            messages.success(request, 'Produto salvo com sucesso!')
+            form.save()
             form = ProdutoModelForm()
+            messages.success(request, 'Produto salvo com sucesso!')
         else:
             messages.error(request, 'Erro ao salvar produto!')
     else:
