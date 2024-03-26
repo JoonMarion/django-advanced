@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/scripts.js' %}"></script>
+</head>
+<body>
+    <h1>Home</h1>
+    <p>Seja bem-vindo ao site!</p>
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td><a href="{% url 'product' product.id %}">{{ product.name }}</a></td>
+            <td>{{ product.price }}</td>
+        </tr>
+        {% endfor %}
+
+        <button onclick="teste();">Contato</button>
+    </table>
+</body>
+</html>
