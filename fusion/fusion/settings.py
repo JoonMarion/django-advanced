@@ -63,7 +63,7 @@ WSGI_APPLICATION = 'fusion.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django2',
+        'NAME': 'fusion',
         'USER': 'root',
         'PASSWORD': '200632',
         'HOST': 'localhost',
