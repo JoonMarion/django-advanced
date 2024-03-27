@@ -62,13 +62,13 @@ WSGI_APPLICATION = 'fusion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fusion',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django2',
+        'USER': 'root',
+        'PASSWORD': '200632',
         'HOST': 'localhost',
-        'PORT': '5432',
-    }
+        'PORT': '3306',
+    },
 }
 
 # Password validation
